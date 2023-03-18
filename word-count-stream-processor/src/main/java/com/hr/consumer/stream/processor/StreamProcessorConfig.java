@@ -22,7 +22,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-@EnableKafka
 @EnableKafkaStreams
 public class StreamProcessorConfig {
 
