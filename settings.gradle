@@ -1,0 +1,5 @@
+rootProject.name = 'kafka-streams'
+include 'word-count-producer'
+include 'word-count-stream-processor'
+include 'word-count-consumer'
+
