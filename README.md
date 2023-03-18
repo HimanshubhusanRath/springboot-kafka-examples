@@ -12,7 +12,7 @@
 * Steps to configure:
   * Configure a KafkaStreamsConfiguration bean (name = defaultKafkaStreamsConfig) using the required stream properties.
   * Define the topology / pipeline for processing by using a StreamsBuilder.  
-   * Note: Topology can be visualized in https://zz85.github.io/kafka-streams-viz/ site.
+    * Note: Topology can be visualized in https://zz85.github.io/kafka-streams-viz/ site.
   
   
 ## Configure Word-Count-Consumer
