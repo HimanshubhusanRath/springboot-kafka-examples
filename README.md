@@ -2,7 +2,7 @@
 
 ## Configure Word-Count-Producer
 * This application pushes some text messages to the Kafka input topic (word.input)
-* Steps to configure: [<b> Autoconfigured by default. Can be manually configured/overridden either by using the below steps or overriding the necessary configuraion properties in the application.properties file.</b>]
+* Steps to configure: [<b> Autoconfigured by default using the application.properties/yml. Can be manually configured/overridden by using the below steps. </b>]
   * Configure a ProducerFactory bean using the required producer properties.
   * Configure a KafkaTemplate bean using this above producer factory.
 * Use the kafka template to push message to the topic.
@@ -10,7 +10,7 @@
   
 ## Configure Word-Count-Stream-Processor
 * This application reads text messages from kafka topic (word.input), calculates the count per word and pushes this count information to another kafka topic (word.out)
-* Steps to configure: [<b> Autoconfigured by default. Can be manually configured/overridden either by using the below steps or overriding the necessary configuraion properties in the application.properties file.</b>]
+* Steps to configure: [<b> Autoconfigured by default using the application.properties/yml. Can be manually configured/overridden by using the below steps. </b>]
   * Configure a KafkaStreamsConfiguration bean (name = defaultKafkaStreamsConfig) using the required stream properties.
 * Define the topology / pipeline for processing by using a StreamsBuilder.  
   * Note: Topology can be visualized in https://zz85.github.io/kafka-streams-viz/ site.
@@ -18,7 +18,7 @@
   
 ## Configure Word-Count-Consumer
 * This application reads word counts from the Kafka ouput topic (word.out)
-* Steps to configure: [<b> Autoconfigured by default. Can be manually configured/overridden either by using the below steps or overriding the necessary configuraion properties in the application.properties file.</b>]
+* Steps to configure: [<b> Autoconfigured by default using the application.properties/yml. Can be manually configured/overridden by using the below steps. </b>]
   * Configure a ConsumerFactory bean using the required consumer properties.
   * Configure a KafkaListenerContainerFactory bean using the above consumer factory.
 * Define the consume method with @KafkaListener.
