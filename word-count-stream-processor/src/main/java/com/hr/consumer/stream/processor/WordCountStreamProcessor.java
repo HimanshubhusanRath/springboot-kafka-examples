@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.StreamsBuilder;
+import org.apache.kafka.streams.TopologyDescription;
 import org.apache.kafka.streams.kstream.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -40,7 +41,6 @@ public class WordCountStreamProcessor
                 .count();
                 //.mapValues((key,val) -> String.valueOf(val));
 
-
         // Write this KTable to the output topic
         wordCount.toStream().to(
                 outputTopicName, // Topic name
@@ -49,6 +49,14 @@ public class WordCountStreamProcessor
                         LONG_SERDE // Output message's value type
                 )
         );
+
+        final TopologyDescription topologyDescription = streamsBuilder.build().describe();
+        /*
+        To visualize the topology, we can paste the value of the topologyDescription in the below site.
+            https://zz85.github.io/kafka-streams-viz/
+         */
+        System.out.println("TOPOLOGY DESCRIPTION \n"+topologyDescription);
+
 
     }
 }
